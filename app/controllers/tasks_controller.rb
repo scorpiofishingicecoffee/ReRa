@@ -8,7 +8,6 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @tasks = @project.tasks.find(params[:id])
     if @tasks.destroy
       flash[:success] = "Task successfully destroyed."
     else
@@ -19,7 +18,7 @@ class TasksController < ApplicationController
 
   def complete
     @tasks.update_attribute(:completed_at, Time.now)
-    redirect_to @project, notice: 'Task completed successfully.'
+    redirect_to @project, notice: "Task completed successfully."
   end
 
   private

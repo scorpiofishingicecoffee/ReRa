@@ -6,8 +6,5 @@ Rails.application.routes.draw do
     end
     end
   end
+root "projects#index"
 end
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"

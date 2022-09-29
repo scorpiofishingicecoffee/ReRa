@@ -1,4 +1,4 @@
-<p style="color: green"><%= notice %></p>
+<p style="notice"><%= notice %></p>
 
 <%= render @project %>
 
@@ -10,7 +10,8 @@
 </div>
 <div>
   <%= link_to "Edit this project", edit_project_path(@project) %> |
-  <%= link_to "Back to projects", projects_path %>
-
-  <%= button_to "Destroy this project", @project, method: :delete %>
+ <%= link_to "Back to projects", projects_path %>
+  <%= button_to "Destroy this project", @project, method: :delete, data: {
+    turbo_confirm: "Are you sure you want to delete this project?"
+  } %>
 </div>
