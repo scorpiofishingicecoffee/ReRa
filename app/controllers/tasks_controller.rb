@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_project
+  before_action :set_task, except: [:create]
 
   def create
     @tasks = @project.tasks.create(task_params)
@@ -15,9 +16,19 @@ class TasksController < ApplicationController
     end
     redirect_to @project
   end
+
+  def complete
+    @tasks.update_attribute(:completed_at, Time.now)
+    redirect_to @project, notice: 'Task completed successfully.'
+  end
+
   private
   def set_project
         @project = Project.find(params[:project_id])
+  end
+
+  def set_task
+    @tasks = @project.tasks.find(params[:id])
   end
 
   def task_params
