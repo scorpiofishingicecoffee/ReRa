@@ -1,0 +1,13 @@
+<h1 class="recipem">Recipe Manager</h1>
+
+<div class="projects" id="projects">
+  <% @projects.each do |project| %>
+    <%= render project %>
+    <p class="vtfr">
+      <%= link_to "View this Food Recipe", project %>
+    </p>
+  <% end %>
+</div>
+<div class="createnr">
+<%= link_to "Create new Recipe", new_project_path %>
+</div>

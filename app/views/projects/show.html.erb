@@ -1,17 +1,20 @@
-<p style="notice"><%= notice %></p>
-
+<h1 class="recipem">Your Recipe</h1>
+<div class="projects">
 <%= render @project %>
-
-<div id="todo_items_wrapper">
+</div>
+<div class="btnip" id="todo_items_wrapper">
 <%= render @project.tasks%>
-<div id="form">
+</div>
+<div class="form" id="form">
 <%= render "tasks/form"%>
 </div>
+<div class="enb">
+  <%= link_to "Edit this Recipe", edit_project_path(@project) %>
+   <%= link_to "Back to Recipe Manager", projects_path %>
 </div>
-<div>
-  <%= link_to "Edit this project", edit_project_path(@project) %> |
- <%= link_to "Back to projects", projects_path %>
-  <%= button_to "Destroy this project", @project, method: :delete, data: {
-    turbo_confirm: "Are you sure you want to delete this project?"
+<div class="dtr">
+  <%= button_to "Destroy this Recipe", @project, method: :delete, data: {
+    turbo_confirm: "Are you sure you want to delete this Recipe?"
   } %>
+  </div>
 </div>

@@ -1,31 +1,34 @@
-<div class="row clearfix">
+<div class="rcf">
+
 <% if task.completed? %>
 <div class="complete">
-<%= button_to "Mark as complete", complete_project_task_path(@project, task.id),
+<%= button_to "Has been added", complete_project_task_path(@project, task.id),
 method: :patch%>
-<i style="opacity:0.4;" class="fa fa-check"></i>
+<i style="opacity:0.4;"></i>
 </div>
+
 <div class="task">
 <p style="opacity: 0.4;"><strike><%= task.content %></strike></p>
 </div>
+
 <div class="trash">
 <%= button_to "Delete", project_task_path(@project, task.id),
 method: :delete, data: { turbo_confirm: "Are you sure?"}%>
-<i class="fa fa-trash">
 </div>
+
 <% else %>
-<div class="complete">
-<%= button_to "Mark as complete", complete_project_task_path(@project, task.id),
+<div class="complete2">
+<%= button_to "Add this Recipe", complete_project_task_path(@project, task.id),
 method: :patch%>
-<i class="fa fa-check"></i>
 </div>
+
 <div class="todo_item">
 <p><%= task.content %></p>
 </div>
-<div class="trash">
-<%= button_to "Delete", project_task_path(@project, task.id),
+
+<div class="trash2">
+<%= button_to "Delete this Recipe", project_task_path(@project, task.id),
 method: :delete, data: { turbo_confirm: "Are you sure?"}%>
-<i class="fa fa-trash">
 </div>
 <% end %>
 </div>

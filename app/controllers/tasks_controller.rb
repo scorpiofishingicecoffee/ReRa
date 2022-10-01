@@ -1,24 +1,23 @@
 class TasksController < ApplicationController
   before_action :set_project
   before_action :set_task, except: [:create]
-
   def create
     @tasks = @project.tasks.create(task_params)
-    redirect_to @project
+    redirect_to @project, notice: "Recipe was added."
   end
 
   def destroy
     if @tasks.destroy
-      flash[:success] = "Task successfully destroyed."
+      flash[:success] = "Recipe was successfully destroyed."
     else
-      flash[:error] = "Task not found."
+      flash[:error] = "Recipe not found."
     end
-    redirect_to @project
+    redirect_to @project, notice: 'Recipe was successfully deleted.'
   end
 
   def complete
     @tasks.update_attribute(:completed_at, Time.now)
-    redirect_to @project, notice: "Task completed successfully."
+    redirect_to @project, notice: "Recipe has been added."
   end
 
   private

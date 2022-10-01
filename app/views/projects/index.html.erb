@@ -1,14 +1,16 @@
-<p><%= notice %></p>
+<nav class="navrecipe">
+<%= button_to 'Logout', logout_path, method: :delete %>
+</nav>
+<h1 class="recipem">Recipe Manager</h1>
 
-<h1>Recipe Manager</h1>
-
-<div id="projects">
+<div class="projects" id="projects">
   <% @projects.each do |project| %>
     <%= render project %>
-    <p>
-      <%= link_to "Show this project", project %>
+    <p class="vtfr">
+      <%= link_to "View this Food Recipe", project %>
     </p>
   <% end %>
 </div>
-
-<%= link_to "New project", new_project_path %>
+<div class="createnr">
+<%= link_to "Create new Recipe", new_project_path %>
+</div>

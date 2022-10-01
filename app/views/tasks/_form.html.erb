@@ -1,7 +1,7 @@
 <%= form_for([@project, @project.tasks.build]) do |f| %>
 
-<%= f.text_field :content, placeholder:"New Task"%>
+<%= f.text_field :content, placeholder:"Input Recipe"%>
 
-<%=f.submit%>
+<%=f.submit "Add new Recipe"%>
 
 <%end%>

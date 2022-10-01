@@ -1,0 +1,15 @@
+  <h1 class="hp1">Sign In</h1>
+  <%= form_with url: sign_in_path do |f| %>
+    <p class="hpp2">
+    <%= f.label 'email:'%><br>
+    <%= f.text_field :email, id: 'email' %>
+    </p>
+    <p class="hpp2">
+    <%= f.label 'password:'%><br>
+    <%= f.password_field :password, id: 'password' %>
+    </p>
+    <p class="hpp3">
+    <%= f.submit 'Log In' %>
+    <%= link_to "Cancel", root_path%>
+    </p>
+  <% end %>

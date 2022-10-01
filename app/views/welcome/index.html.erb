@@ -1,0 +1,17 @@
+<h1 class="hp1">Recipe Manager Homepage</h1>
+<p class="hpp1">Please Log in or Sign up to access The Recipe Manager</p>
+<div class="chp1">
+  <% if Current.user %>
+    Logged in as: <%= Current.user.email %>
+    <br>
+    <%= link_to 'Edit Password', edit_password_path %>
+    <%= button_to 'Logout', logout_path, method: :delete %>
+    <% else %>
+    <p class="sui">
+    <%= link_to'Sign Up', sign_up_path %>
+    </p>
+    <p class="sui">
+    <%= link_to 'Login', sign_in_path %>
+    </p>
+  <% end %>
+  </div>
